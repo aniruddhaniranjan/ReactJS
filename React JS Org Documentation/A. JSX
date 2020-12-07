@@ -1,0 +1,10 @@
+JSX is a syntax extension to JavaScript. We recommend using it with React to describe what the UI should look like. JSX produces React “elements”.
+
+React embraces the fact that rendering logic is inherently coupled with other UI logic: how events are handled, how the state changes over time, and how the data is prepared for display. Instead of artificially separating technologies by putting markup and logic in separate files, React separates concerns with loosely coupled units called “components” that contain both.
+
+const name = 'Josh Perez';
+const element = <h1>Hello, {name}</h1>;
+You can put any valid JavaScript expression inside the curly braces in JSX. After compilation, JSX expressions become regular JavaScript function calls and evaluate to JavaScript objects. This means that you can use JSX inside of if statements and for loops, assign it to variables, accept it as arguments, and return it from functions. 
+
+** JSX Prevents Injection Attacks. It is safe to embed user input in JSX. **
+
