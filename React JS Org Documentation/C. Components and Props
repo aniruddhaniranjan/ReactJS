@@ -1,0 +1,17 @@
+Components let you split the UI into independent, reusable pieces, and think about each piece in isolation. They accept arbitrary inputs (called “props”) and return React elements describing what should appear on the screen.
+
+Function and Class Components - This function is a valid React component because it accepts a single “props” (which stands for properties) object argument with data and returns a React element. We call such components “function components” because they are literally JavaScript functions.
+function Welcome(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
+
+Rendering a Component - elements can also represent user-defined components [ const element = <Welcome name="Sara" />; ]. When React sees an element representing a user-defined component, it passes JSX attributes and children to this component as a single object. We call this object “props”. When we call ReactDOM.render() with this element, React converts it to the above function 'Welcome'.
+Always start component names with a capital letter. React treats components starting with lowercase letters as DOM tags. [ <div /> vs <Welcome /> ]
+
+Composing Components - Components can refer to other components in their output. This lets us use the same component abstraction for any level of detail. A button, a form, a dialog, a screen: in React apps, all those are commonly expressed as components.
+* Any prop that is passed into a component named 'prop-name' must be accessed inside the component as 'props.prop-name'.
+
+Extracting Components - A good rule of thumb is that if a part of your UI is used several times (Button, Panel, Avatar), or is complex enough on its own (App, FeedStory, Comment), it is a good candidate to be extracted to a separate component.
+
+Props are Read-Only - Whether you declare a component as a function or a class, it must never modify its own props. Pure functions don't modify props, impure functions do.
+** All React components must act like pure functions with respect to their props. **
